@@ -1,0 +1,15 @@
+
+<launch>
+
+  <arg name="map_file" default="$(find occupancygridcomplexmap2)/maps/map.yaml"/>
+
+  <!-- Run the map server -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+ <node pkg="occupancygridcomplexmap2" name="test_occupancy_grid" type="occupancy_grid.py" output="screen" />
+
+ <node type="rviz" name="rviz" pkg="rviz" args="-d $(find occupancygridcomplexmap2)/config/deneme.rviz" />
+  
+ <node pkg="occupancygridcomplexmap2" name="test_astar" type="astar.py" output="screen" />
+ 
+</launch>
