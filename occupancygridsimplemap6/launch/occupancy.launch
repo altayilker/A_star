@@ -1,0 +1,10 @@
+
+<launch>
+
+ <node pkg="occupancygridsimplemap6" name="test_occupancy_grid" type="occupancy_grid.py" output="screen" />
+
+ <node type="rviz" name="rviz" pkg="rviz" args="-d $(find occupancygridsimplemap6)/config/deneme.rviz" />
+  
+ <node pkg="occupancygridsimplemap6" name="test_astar" type="astar.py" output="screen" />
+ 
+</launch>
